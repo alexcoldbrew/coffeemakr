@@ -1,5 +1,9 @@
 <h1>Welcome to CoffeeMakr!!!</h1>
 
+<% if logged_in? %>
+    <h2>You're currently logged in, <%= current_user.username %></h2>
+<% end %>
+
 <p>
     <%= link_to "Login", login_path %>
     or
