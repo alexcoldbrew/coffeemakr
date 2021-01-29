@@ -1,11 +1,12 @@
 class SessionsController < ApplicationController
 
-    skip_before_action :authorized, only: [:new, :create, :welcome]
+    skip_before_action :authorized, only: [:new, :create, :welcome, :omniauth]
 
     def welcome
     end
 
     def new
+        @user = User.new
     end
 
     def create
@@ -29,17 +30,17 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
-            u.username = auth['info']['first_name']
-            u.email = auth['info']['email']
-        end
+        
+        user = User.create_from_omniauth(auth)
+    
         if user.save
             session[:user_id] = user.id
             redirect_to user_path(user)
         else
-            flash[:alert] = "Didn't work. Please try again!"
-            redirect_to '/login'
+           flash[:message] = user.errors.full_messages.join(", ")
+            redirect_to '/'
         end
+
     end
 
     private
