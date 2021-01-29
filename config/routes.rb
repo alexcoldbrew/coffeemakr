@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   get '/authorized' => 'sessions#page_requires_login'
   get '/logout' => 'sessions#destroy'
+  get '/auth/:provider/callback' => 'sessions#omniauth'
 
   resources :reviews
   resources :ingredients
