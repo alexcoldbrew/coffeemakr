@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
 
-    def welcome
+    skip_before_action :authorized, only: [:new, :create, :welcome]
 
+    def welcome
     end
 
     def new
@@ -16,6 +17,10 @@ class SessionsController < ApplicationController
             flash[:alert] = "Invalid credentials. Please try again!"
             redirect_to '/login'
         end
+    end
+
+    def page_requires_login
+
     end
 
 end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
+  get '/authorized' => 'sessions#page_requires_login'
 
   resources :reviews
   resources :ingredients
