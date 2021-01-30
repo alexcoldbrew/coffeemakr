@@ -1,2 +1,13 @@
-<br>
-Welcome <%= @user.username %>, you've signed in!!
+<h1><%= @user.username %>'s Profile</h1> <br>
+
+<%= link_to 'Home', '/' %>
+
+<%= link_to "All Recipes", recipes_path %> <br><br>
+
+<%= link_to "Logout", logout_path %> <br><br>
+
+<h3>Your Recipes:</h3>
+
+<ul>
+
+</ul>
