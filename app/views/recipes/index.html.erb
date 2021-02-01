@@ -13,7 +13,7 @@
 <% @recipes.each do |recipe| %>
     <li><b><%= link_to recipe.name, recipe_path(recipe) %></b></li>
     <li><%= recipe.description %></li>
-    <li><%= recipe.date_created %></li>
+    <li><%= recipe.date_created %></li> <br><br>
 <% end %>
 </ul>
 

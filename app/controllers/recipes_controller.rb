@@ -13,7 +13,9 @@ class RecipesController < ApplicationController
     end
 
     def create
-        @recipe = Recipe.create(recipe_params)
+        # assign ingredient_ids here upon creation?
+        @recipe = current_user.recipes.build(recipe_params)
+        
         if @recipe.save
             redirect_to recipe_path(@recipe)
         else
@@ -33,7 +35,7 @@ class RecipesController < ApplicationController
     private
 
     def recipe_params
-        params.require(:recipe).permit(:name, :description, :date_created, :user_id)
+        params.require(:recipe).permit(:name, :description, :date_created, :user_id, ingredient_ids: [])
     end
 
 end

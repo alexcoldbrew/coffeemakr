@@ -9,9 +9,9 @@
 <h3>Your Recipes:</h3>
 
 <ul>
-    <%# <% @recipe.each do |recipe| %> %>
-     <%#   <li><%= recipe.name %></li> %>
-    <%# <% end %> %>
+    <% @recipes.each do |recipe| %>
+     <li><%= recipe.name %></li>
+    <% end %>
 </ul>
 
 <%= link_to "New Recipe", new_recipe_path %>

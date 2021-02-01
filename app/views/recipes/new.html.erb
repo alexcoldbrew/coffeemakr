@@ -23,7 +23,7 @@
 
     <%# needs to be able to select, then ADD to the current recipe and select another %>
 
-    <%= collection_check_boxes(:recipe, :user_id, Ingredient.all, :id, :name) %> <br><br>
+    <%= collection_check_boxes(:recipe, :ingredient_ids, Ingredient.all, :id, :name) %> <br><br>
     
 
     <%= f.submit "Create" %>

@@ -1,4 +1,16 @@
+<br>
+<%= link_to 'Home', '/' %>
+
+<%= link_to "All Recipes", recipes_path %>
+
+<%= link_to "New Recipe", new_recipe_path %>
+
+<%= link_to "Profile", user_path(current_user) %>
+
+<%= link_to "Logout", logout_path %> <br><br>
+
 <h1><%= @recipe.name %></h1>
 
 <h3><%= @recipe.description %></h3>
 <p><%= @recipe.date_created %></p>
+
