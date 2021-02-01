@@ -14,3 +14,8 @@
 <h3><%= @recipe.description %></h3>
 <p><%= @recipe.date_created %></p>
 
+<ul>
+<% @recipe.ingredients.each do |recipe| %>
+    <li><%= recipe.name %></li>
+<% end %>
+</ul>
