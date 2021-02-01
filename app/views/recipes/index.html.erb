@@ -1,8 +1,17 @@
 <h1>All Recipes</h1>
 
+<%# going to abstract away in layout %>
+
+<%= link_to 'Home', '/' %>
+
+<%= link_to "Profile", user_path(current_user) %>
+
+<%= link_to "Logout", logout_path %> <br><br>
+
+
 <ul>
 <% @recipes.each do |recipe| %>
-    <li><b><%= recipe.name %></b></li>
+    <li><b><%= link_to recipe.name, recipe_path(recipe) %></b></li>
     <li><%= recipe.description %></li>
     <li><%= recipe.date_created %></li>
 <% end %>
