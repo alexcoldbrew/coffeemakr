@@ -15,7 +15,15 @@
 
     <%= link_to "All Recipes", recipes_path %>
 
+    <% if current_user != nil %>
+
     <%= link_to "Profile", user_path(current_user) %>
+
+    <% else %>
+
+    <%= link_to "Profile", login_path %>
+
+    <% end %>
 
     <%= link_to "Logout", logout_path %> <br>
   </head>
