@@ -11,6 +11,6 @@
 
     <%= collection_check_boxes(:recipe, :ingredient_ids, Ingredient.all.order(:name), :id, :name) %> <br><br>
     
-    <%= f.submit "Create" %>
+    <%= f.submit %>
 
 <% end %>
