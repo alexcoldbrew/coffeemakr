@@ -1,15 +1,5 @@
 <h1>New Recipe!!</h1>
 
-<%= link_to 'Home', '/' %>
-
-<%= link_to "All Recipes", recipes_path %>
-
-<%= link_to "Profile", user_path(current_user) %>
-
-<%= link_to "Logout", logout_path %> <br><br>
-
-
-
 <%= form_for(@recipe) do |f| %>
 
     <%= f.label :name %>
@@ -21,9 +11,7 @@
     <%= f.label :date_created %>
     <%= f.date_select :date_created %> <br><br>
 
-    <%# needs to be able to select, then ADD to the current recipe and select another %>
-
-    <%= collection_check_boxes(:recipe, :ingredient_ids, Ingredient.all, :id, :name) %> <br><br>
+    <%= collection_check_boxes(:recipe, :ingredient_ids, Ingredient.all.order(:name), :id, :name) %> <br><br>
     
 
     <%= f.submit "Create" %>

@@ -1,13 +1,7 @@
 <br>
-<%= link_to 'Home', '/' %>
-
-<%= link_to "All Recipes", recipes_path %>
 
 <%= link_to "New Recipe", new_recipe_path %>
 
-<%= link_to "Profile", user_path(current_user) %>
-
-<%= link_to "Logout", logout_path %> <br><br>
 
 <h1><%= @recipe.name %></h1>
 
@@ -21,5 +15,7 @@
 </ul>
 
 <br><br><br>
+
+<%= link_to "Edit Recipe", edit_recipe_path %>
 
 <%= link_to "Delete Recipe", @recipe, method: "delete" %>
