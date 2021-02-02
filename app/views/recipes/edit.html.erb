@@ -1,21 +1,3 @@
 <h1>Edit Recipe</h1>
 
-<%= form_for(@recipe) do |f| %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %> <br><br>
-
-    <%= f.label :description %>
-    <%= f.text_area :description %> <br><br>
-
-    <%= f.label :date_created %>
-    <%= f.date_select :date_created %> <br><br>
-
-    <%# needs to be able to select, then ADD to the current recipe and select another %>
-
-    <%= collection_check_boxes(:recipe, :ingredient_ids, Ingredient.all, :id, :name) %> <br><br>
-    
-
-    <%= f.submit "Update" %>
-
-<% end %>
+<%= render 'form' %>
