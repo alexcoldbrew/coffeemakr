@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
     skip_before_action :authorized, only: [:new, :create, :welcome, :omniauth]
 
     def welcome
+        render layout: false
     end
 
     def new
