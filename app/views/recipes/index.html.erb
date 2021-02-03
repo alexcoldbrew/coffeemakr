@@ -3,11 +3,10 @@
 <ul>
 <% @recipes.each do |recipe| %>
     <li><b><%= link_to recipe.name, recipe_path(recipe) %></b></li>
-    <li><%= recipe.description %></li>
-    <li><%= recipe.date_created %></li> <br><br>
+    <li><%= recipe.date_created %></li>
+    <li>Created By: <%= recipe.user.username %></li> <br><br>
 <% end %>
 </ul>
 
-<br>
 
 <%= link_to "New Recipe", new_recipe_path %>
