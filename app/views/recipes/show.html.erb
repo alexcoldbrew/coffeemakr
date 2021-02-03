@@ -5,16 +5,14 @@
 
 <h1><%= @recipe.name %></h1>
 
-<h3><%= @recipe.description %></h3>
-<p><%= @recipe.date_created %></p>
+<p>Created on: <%= @recipe.date_created %> by <%= @recipe.user.username %></p>
 
-<ul>
-<% @recipe.ingredients.each do |recipe| %>
-    <li><%= recipe.name %></li>
-<% end %>
-</ul>
+<h3>Description: <%= @recipe.description %></h3>
 
-<br><br><br>
+
+<%= link_to "View All Ingredients", recipe_ingredients_path(@recipe) %>
+
+<br><br>
 
 <% if recipe_owner?(@recipe) %>
 
