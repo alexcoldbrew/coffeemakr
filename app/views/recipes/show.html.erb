@@ -12,7 +12,7 @@
 
 <%= link_to "View All Ingredients", recipe_ingredients_path(@recipe) %> <br><br>
 
-<%= link_to "Leave A Review", new_recipe_review_path(@recipe, @review) %>
+<%= link_to "Leave A Review", new_recipe_review_path(@recipe) %>
 
 <br><br>
 
@@ -24,10 +24,11 @@
 
 <% end %> <br><br>
 
-
-<% if @review %>
+<% binding.pry %>
+<% if !!@review %>
 <h3>Reviews:</h3>
 <ul>
+
 <% @review.each do |review| %>
     <li><%= review.content %></li>
     <li><%= review.rating %></li>

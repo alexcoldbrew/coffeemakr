@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   get '/auth/:provider/callback' => 'sessions#omniauth'
 
-  # resources :reviews,
 
   resources :recipes do
     resources :reviews, shallow: true

@@ -15,7 +15,6 @@ class RecipesController < ApplicationController
     end
 
     def create
-        # assign ingredient_ids here upon creation?
         @recipe = current_user.recipes.build(recipe_params)
         
         if @recipe.save

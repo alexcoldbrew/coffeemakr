@@ -8,15 +8,18 @@ class ReviewsController < ApplicationController
     end
 
     def new
-        @review = Review.new
+        @recipe = Recipe.find_by_id(params[:recipe_id])
+        @review = @recipe.New
     end
 
     def create
-        @recipe = Recipe.find_by_id(params[:id])
-        @review = Review.new(reviews_params)
+        byebug
+        @recipe = Recipe.find_by_id(params[:recipe_id])
+        @review = @recipe.reviews.build(reviews_params)
+        @review.user = current_user
    
         if @review.save
-            redirect_to review_path(@review)
+            redirect_to recipe_path(@recipe)
         else
             render :new
         end
