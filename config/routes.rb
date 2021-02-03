@@ -8,9 +8,15 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   get '/auth/:provider/callback' => 'sessions#omniauth'
 
-  resources :reviews
+  # resources :reviews,
+
+  resources :recipes do
+    resources :reviews, shallow: true
+    resources :ingredients, only: [:index]
+  end
+
   resources :ingredients
-  resources :recipes
+
   resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
 end
