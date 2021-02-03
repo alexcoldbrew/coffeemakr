@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :ingredients
+  resources :reviews
 
   resources :users
   
