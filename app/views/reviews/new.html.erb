@@ -6,7 +6,7 @@
     <%= f.text_area :content %> <br><br>
 
     <%= f.label :rating %>
-    <%= select_tag(:rating, options_for_select([1, 2, 3, 4, 5]))%> <br><br>
+    <%= select_tag("review[rating]", options_for_select([1, 2, 3, 4, 5]))%> <br><br>
 
     <%= f.submit %>
 

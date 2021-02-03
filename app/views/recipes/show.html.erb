@@ -24,12 +24,13 @@
 
 <% end %> <br><br>
 
-<% binding.pry %>
-<% if !!@review %>
+
+
+<% if !!@reviews %>
 <h3>Reviews:</h3>
 <ul>
 
-<% @review.each do |review| %>
+<% @reviews.each do |review| %>
     <li><%= review.content %></li>
     <li><%= review.rating %></li>
 <% end %>
