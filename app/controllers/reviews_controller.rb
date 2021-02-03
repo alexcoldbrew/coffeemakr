@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
         @review = Review.new(reviews_params)
    
         if @review.save
-            redirect_to recipe_path(@recipe)
+            redirect_to review_path(@review)
         else
             render :new
         end
