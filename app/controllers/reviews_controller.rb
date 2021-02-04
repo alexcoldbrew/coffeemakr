@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
         if @review.save
             redirect_to recipe_path(@recipe)
         else
-            
+            flash.now[:messages] = @review.errors.full_messages
             render :new
         end
     end

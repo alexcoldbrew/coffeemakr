@@ -1,0 +1,21 @@
+<div class="fields_with_errors">
+
+<% if flash[:messages] %>
+    <% flash[:messages].each do |message| %>
+        <%= message %> <br><br>
+    <% end %>
+<% end %>
+
+</div>
+
+<%= form_for [@recipe, @review] do |f| %>
+
+    <%= f.label "Review:" %>
+    <%= f.text_area :content %> <br><br>
+
+    <%= f.label :rating %>
+    <%= select_tag("review[rating]", options_for_select([1, 2, 3, 4, 5]))%> <br><br>
+
+    <%= f.submit %>
+
+<% end %>
