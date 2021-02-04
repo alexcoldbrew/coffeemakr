@@ -16,38 +16,39 @@ Specs:
 - [?] Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
     - Recipe has_and_belongs_to_many Ingredients, Ingredient has_and_belongs_to_many Recipes.
 
-- [ ] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
+- [?] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
     - 
 
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
     - validating User username and email presence and uniqueness (has_secure_password deals with the password)
     - validating Recipe name, description, and date_created presence
     - validating Ingredient name presence and uniqueness (one want ONE of every ingredient created)
-    - 
+    - validating Review content and rating presence
 
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-    - 
+- [?] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+    - Recipe.alphabetize URL: /recipes/\
+    - Ingredient.alphabetize URL: /recipe/new
 
-- [ ] Include signup (how e.g. Devise)
+- [x] Include signup (how e.g. Devise)
+    - User must use the form to sign up before they can log in.
 
+- [x] Include login (how e.g. Devise)
+    - User must log in before they can access anything besides signup, login, or home page.
 
-- [ ] Include login (how e.g. Devise)
+- [x] Include logout (how e.g. Devise)
+    - Users may click the logout link to clear their session and log out.
 
+- [x] Include third party signup/login (how e.g. Devise/OmniAuth)
+    - User may be created through OmniAuth Google login (or simply login if User was already created)
 
-- [ ] Include logout (how e.g. Devise)
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
+    - nested ingredients index in recipes, URL: /recipes/6/ingredients
 
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+    - nested reviews new in recipes, URL: /recipes/6/reviews/new
 
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
-
-
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
-
-
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
-
-
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
-
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+    - some forms displaying validation errors: /signup and /login
 
 
 Confirm:
