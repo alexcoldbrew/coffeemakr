@@ -1,7 +1,7 @@
 <h1>All Recipes</h1>
 
 <ul>
-<% @recipes.order(:name).each do |recipe| %>
+<% @recipes.alphabetize.each do |recipe| %>
     <li><b><%= link_to recipe.name, recipe_path(recipe) %></b></li>
     <li><%= recipe.date_created %></li>
     <li>Created By: <%= recipe.user.username %></li> <br><br>
