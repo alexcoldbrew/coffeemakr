@@ -20,6 +20,7 @@ class RecipesController < ApplicationController
         if @recipe.save
             redirect_to recipe_path(@recipe)
         else
+            flash.now[:messages] = @recipe.errors.full_messages
             render :new
         end
     end
