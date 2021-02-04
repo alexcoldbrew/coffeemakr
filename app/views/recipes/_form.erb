@@ -20,7 +20,7 @@
     <%= f.date_select :date_created %> <br><br>
 
     <%= collection_check_boxes(:recipe, :ingredient_ids, Ingredient.all.alphabetize, :id, :name) %> <br><br>
-    
+
     <%= f.submit %>
 
 <% end %>

@@ -7,16 +7,16 @@ Rails.application.routes.draw do
   get '/authorized' => 'sessions#page_requires_login'
   get '/logout' => 'sessions#destroy'
   get '/auth/:provider/callback' => 'sessions#omniauth'
+  
+  post '/ingredients/new' => 'ingredients#create'
 
+  resources :ingredients
+  resources :reviews
+  resources :users
 
   resources :recipes do
     resources :reviews, shallow: true
     resources :ingredients, only: [:index]
   end
-
-  resources :ingredients
-  resources :reviews
-
-  resources :users
   
 end
