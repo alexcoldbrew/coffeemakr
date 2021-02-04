@@ -16,8 +16,8 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
-            flash[:alert] = "Invalid credentials. Please try again!"
-            redirect_to '/login'
+            flash.now[:messages] = "Invalid credentials. Try something else."
+            render :new
         end
     end
 

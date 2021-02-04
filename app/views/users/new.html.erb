@@ -1,5 +1,15 @@
 <h1>Sign Up!!</h1>
 
+<div class="fields_with_errors">
+
+<% if flash[:messages] %>
+    <% flash[:messages].each do |message| %>
+        <%= message %> <br><br>
+    <% end %>
+<% end %>
+
+</div>
+
 <%= form_for(@user) do |f| %>
 
     <%= f.label :username %>
