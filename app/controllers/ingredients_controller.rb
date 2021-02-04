@@ -2,7 +2,11 @@ class IngredientsController < ApplicationController
 
     def index
         @recipe = Recipe.find_by_id(params[:recipe_id])
-        @ingredients = Ingredient.all
+        if @recipe
+            @ingredients = Ingredient.all
+        else
+            redirect_to recipes_path
+        end
     end
 
     def show
@@ -16,8 +20,9 @@ class IngredientsController < ApplicationController
     def create
         @ingredient = Ingredient.new(ingredients_params)
         if @ingredient.save
-            redirect_to @ingredient
+            redirect_to new_recipe_path
         else
+
             render :new
         end
     end
