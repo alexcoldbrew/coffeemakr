@@ -31,8 +31,9 @@
 <ul>
 
 <% @reviews.each do |review| %>
+    <li><%= review.user.username%> said:</li>
     <li><%= review.content %></li>
-    <li><%= review.rating %></li>
-<% end %>
+    <li><%= review.rating %> / 5</li>
+<% end %> <br><br>
 </ul>
 <% end %>
