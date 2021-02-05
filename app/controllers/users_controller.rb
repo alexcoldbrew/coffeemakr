@@ -19,8 +19,7 @@ class UsersController < ApplicationController
     
         if @user.save
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
-            # maybe redirect to welcome page after sign up?
+            redirect_to "/"
         else
             flash.now[:messages] = @user.errors.full_messages
             render :new
