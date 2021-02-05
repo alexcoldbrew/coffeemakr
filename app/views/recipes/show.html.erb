@@ -22,7 +22,7 @@
 
 <%= link_to "Delete Recipe", @recipe, method: "delete" %>
 
-<% end %> <br><br>
+<% end %> <br>
 
 
 
@@ -33,7 +33,7 @@
 <% @reviews.each do |review| %>
     <li><%= review.user.username%> said:</li>
     <li><%= review.content %></li>
-    <li><%= review.rating %> / 5</li>
-<% end %> <br><br>
+    <li><%= review.rating %> / 5</li> <br><br>
+<% end %>
 </ul>
 <% end %>

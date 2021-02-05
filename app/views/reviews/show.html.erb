@@ -1,8 +1,9 @@
 <h1>Review</h1>
 
-<ul>
-<% @review.each do |review| %>
-    <li><%= review.content %></li>
-    <li><%= review.rating %></li>
-<% end %>
-</ul>
+<%= @review.user.username %> said about <%= @review.recipe.name %>:<br><br>
+
+<%= @review.content %>
+
+<br><br>
+
+<%= @review.rating %> / 5
