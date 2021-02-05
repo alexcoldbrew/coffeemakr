@@ -5,7 +5,7 @@
 
 <h1><%= @recipe.name %></h1>
 
-<p>Created on: <%= @recipe.date_created %> by <%= @recipe.user.username %></p>
+<p>Posted on: <%= @recipe.date_created.strftime("%B %-d, %Y") %> by <b><%= @recipe.user.username %></b></p>
 
 <h3>Description: <%= @recipe.description %></h3>
 

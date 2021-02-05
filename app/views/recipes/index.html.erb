@@ -3,8 +3,8 @@
 <ul>
 <% @recipes.alphabetize.each do |recipe| %>
     <li><b><%= link_to recipe.name, recipe_path(recipe) %></b></li>
-    <li><%= recipe.date_created %></li>
-    <li>Created By: <%= recipe.user.username %></li> <br><br>
+    <li>Posted on: <%= recipe.date_created.strftime("%B %-d, %Y") %></li>
+    <li>Created by: <b><%= recipe.user.username %></b></li> <br><br>
 <% end %>
 </ul>
 
