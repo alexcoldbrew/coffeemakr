@@ -17,7 +17,7 @@
     <%= f.text_area :description %> <br><br>
 
     <%= f.label :date_created %>
-    <%= f.date_select :date_created %> <br><br>
+    <%= f.date_select :date_created, :order => [:month, :day, :year] %> <br><br>
 
     <%= collection_check_boxes(:recipe, :ingredient_ids, Ingredient.all.alphabetize, :id, :name) %> <br><br>
 
