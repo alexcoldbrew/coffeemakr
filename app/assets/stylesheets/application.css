@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ .fields_with_errors {
+     color: red;
+ }
