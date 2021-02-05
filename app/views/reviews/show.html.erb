@@ -7,3 +7,13 @@
 <br><br>
 
 <%= @review.rating %> / 5
+
+ <br><br>
+
+ <% if review_owner?(@review) %>
+
+<%= link_to "Edit Review", edit_review_path %>
+
+<%= link_to "Delete Review", @review, method: "delete" %>
+
+<% end %> <br>
