@@ -27,9 +27,6 @@ class SessionsController < ApplicationController
         redirect_to '/'
     end
 
-    def page_requires_login
-    end
-
     def omniauth
         user = User.create_from_omniauth(auth)
         if user.save
