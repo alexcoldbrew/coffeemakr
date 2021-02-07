@@ -26,9 +26,7 @@ class IngredientsController < ApplicationController
             render :new
         end
     end
-
-    # can change this to only let an admin edit/update/delete ingredients if wanted..
-
+    
     def edit
         @ingredient = Ingredient.find_by_id(params[:id])
     end

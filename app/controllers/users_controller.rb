@@ -26,14 +26,9 @@ class UsersController < ApplicationController
         end
     end
 
-    def edit
-    end
+    # choosing to not let users update or delete their accounts, for now.
 
-    def update
-    end
-
-    def destroy
-    end
+    private
 
     def user_params
         params.require(:user).permit(:username, :email, :password)

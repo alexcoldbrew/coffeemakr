@@ -13,7 +13,6 @@ class ReviewsController < ApplicationController
     end
 
     def create
-       
         @recipe = Recipe.find_by_id(params[:recipe_id])
         @review = @recipe.reviews.build(reviews_params)
         @review.user = current_user

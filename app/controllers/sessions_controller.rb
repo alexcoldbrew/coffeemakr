@@ -27,13 +27,10 @@ class SessionsController < ApplicationController
     end
 
     def page_requires_login
-
     end
 
     def omniauth
-        
         user = User.create_from_omniauth(auth)
-    
         if user.save
             session[:user_id] = user.id
             redirect_to user_path(user)
@@ -41,8 +38,7 @@ class SessionsController < ApplicationController
            flash[:message] = user.errors.full_messages.join(", ")
             redirect_to '/'
         end
-
-    end
+     end
 
     private
 

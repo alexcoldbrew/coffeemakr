@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :ingredients
   resources :reviews
-  resources :users
+  resources :users, except: [:edit, :update, :destroy]
 
   resources :recipes do
     resources :reviews, shallow: true

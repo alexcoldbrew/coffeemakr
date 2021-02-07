@@ -25,8 +25,6 @@ class RecipesController < ApplicationController
         end
     end
 
-    # messy way to keep ppl from entering edit by URL but works?
-
     def edit
         @recipe = Recipe.find_by_id(params[:id])
         unless current_user.id == @recipe.user_id
