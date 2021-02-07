@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   get '/authorized' => 'sessions#page_requires_login'
   get '/logout' => 'sessions#destroy'
   get '/auth/:provider/callback' => 'sessions#omniauth'
-  
-  post '/ingredients/new' => 'ingredients#create'
 
   resources :ingredients
   resources :reviews

@@ -13,11 +13,11 @@ Specs:
 - [x] Include at least two has_many through relationships (x has_many y through z; e.g. Recipe has_many Items through Ingredients)
     - User has_many Reviewed_Recipes through Reviews, Recipe has_many Users through Reviews.
 
-- [?] Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
+- [x] Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
     - Recipe has_and_belongs_to_many Ingredients, Ingredient has_and_belongs_to_many Recipes.
 
-- [?] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
-    - 
+- [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
+    - Reviews joins between user and recipe
 
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
     - validating User username and email presence and uniqueness (has_secure_password deals with the password)
@@ -25,7 +25,7 @@ Specs:
     - validating Ingredient name presence and uniqueness (one want ONE of every ingredient created)
     - validating Review content and rating presence
 
-- [?] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
     - Recipe.alphabetize URL: /recipes/\
     - Ingredient.alphabetize URL: /recipe/new
 
