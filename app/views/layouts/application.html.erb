@@ -11,6 +11,7 @@
 
     <br>
 
+
     <%= link_to 'Home', '/' %>
 
     <%= link_to "All Recipes", recipes_path %>
@@ -21,12 +22,15 @@
 
     <% else %>
 
-    <%= link_to "Profile", login_path %>
+    
 
     <% end %>
 
     <%= link_to "Logout", logout_path %> <br>
+
+
   </head>
+
 
   <body>
     <%= yield %>
