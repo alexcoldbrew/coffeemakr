@@ -43,6 +43,10 @@ class IngredientsController < ApplicationController
         redirect_to ingredients_path
     end
 
+    def list
+        @ingredients = Ingredient.all
+    end
+
     private
 
     def ingredients_params

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/authorized' => 'sessions#page_requires_login'
   get '/logout' => 'sessions#destroy'
   get '/auth/:provider/callback' => 'sessions#omniauth'
+  get '/ingredient-list' => 'ingredients#list'
 
   resources :ingredients
   resources :reviews
