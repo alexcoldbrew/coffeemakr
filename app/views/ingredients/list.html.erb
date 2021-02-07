@@ -2,7 +2,7 @@
 
 <ul>
 <% @ingredients.alphabetize.each do |ingredient| %>
-    <li><b><%=  ingredient.name %></b></li>
+    <li><b><%= link_to ingredient.name, ingredient_path(ingredient) %></b></li>
 <% end %>
 </ul>
 
