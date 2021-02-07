@@ -1,24 +1,44 @@
-# README
+# CoffeeMakr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install
 
-Things you may want to cover:
+### Clone the Project Repository
 
-* Ruby version
+```shell
+git clone git@github.com:alexcoldbrew/coffeemakr.git
+cd coffeemakr
+```
 
-* System dependencies
+### Check Your Ruby Version
 
-* Configuration
+```shell
+ruby -v
+```
 
-* Database creation
+This was built in Ruby 2.6.1, you may install the correct Ruby version by:
 
-* Database initialization
+```shell
+rbenv install 2.6.1
+```
 
-* How to run the test suite
+### Install Dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+Using Bundler
 
-* Deployment instructions
+```shell
+bundle install
+```
 
-* ...
+### Initialize the Database
+
+```shell
+rails db:create db:migrate db:seed
+```
+
+## Server
+
+view the project in your browser at http://localhost:3000/ by:
+
+```shell
+rails s
+```
