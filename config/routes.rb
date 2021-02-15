@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :ingredients
   resources :reviews
-  resources :users, except: [:edit, :update, :destroy]
+  resources :users, except: [:edit, :update, :destroy] do
+    resources :reviewed_recipes, only: [:index]
+  end
 
   resources :recipes do
     resources :reviews, shallow: true

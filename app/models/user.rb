@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_many :recipes
-    has_many :reviewed_recipes, through: :reviews, source: :recipe
+    has_many :reviews
+    has_many :reviewed_recipes, -> {distinct}, through: :reviews, source: :recipe
     has_secure_password
     validates :username, :email, presence: true
     validates :username, :email, uniqueness: true
